@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
 import './App.css';
-
+import DemoSagaComponent from './saga/DemoSagaComponent';
+import store from './saga/store';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='app-container'>
+        <div className='app-bg'>
+        </div>
+        <div className='app-content'>
+          <DemoSagaComponent />
+        </div>
+      </div></Provider>
   );
 }
 
